@@ -1,0 +1,38 @@
+CONCEPTOS DE LA RUTA POST /reporte
+
+¿QUÉ HACE ESTA RUTA?
+--------------------
+Esta ruta POST recibe datos enviados desde el cliente en el cuerpo (body) de la 
+solicitud. Específicamente:
+
+1. Extrae el valor de req.body.mensaje (el campo "mensaje" enviado en el JSON)
+2. Responde con un objeto JSON que contiene:
+   - estado: "Reporte recibido" (confirmación de que se recibió el dato)
+   - mensaje: el mismo mensaje que recibió del cliente
+
+A diferencia de las rutas GET (que se acceden escribiendo la URL), las rutas POST 
+requieren enviar datos estructurados (generalmente en formato JSON) desde el cliente.
+
+¿PARA QUÉ PODRÍA SERVIR EN UNA APLICACIÓN COMUNITARIA?
+------------------------------------------------------
+Esta ruta sería útil para:
+
+1. Sistema de reportes de problemas: Los miembros de la comunidad pueden reportar
+   incidencias (ej: "El parque está dañado", "Falta iluminación en la calle X")
+
+2. Caja de sugerencias: Los vecinos pueden enviar sugerencias para mejorar la 
+   comunidad
+
+3. Denuncias anónimas: Permitir que las personas reporten problemas sin revelar 
+   su identidad
+
+4. Encuestas rápidas: Recopilar opiniones sobre eventos o decisiones comunitarias
+
+5. Sistema de ayuda: Los vecinos pueden solicitar ayuda (ej: "Necesito ayuda con 
+   el cuidado de mi mascota")
+
+Ejemplo de uso con Postman/Thunder Client:
+- Método: POST
+- URL: http://localhost:3000/reporte
+- Body (JSON): {"mensaje": "Hay un árbol caído en la calle principal"}
+- Respuesta: {"estado": "Reporte recibido", "mensaje": "Hay un árbol caído en la calle principal"}

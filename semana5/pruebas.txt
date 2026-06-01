@@ -1,0 +1,17 @@
+PRUEBAS DE RUTAS DEL SERVIDOR
+
+1. Ruta: http://localhost:3000
+   Resultado: Muestra "Servidor activo"
+   Explicación: Esta es la ruta raíz (home) del servidor. Cuando se accede a ella, 
+   el servidor responde con el mensaje "Servidor activo" usando res.send().
+
+2. Ruta: http://localhost:3000/saludo
+   Resultado: Muestra "Hola comunidad"
+   Explicación: Esta ruta GET devuelve un mensaje de saludo genérico a la comunidad. 
+   No requiere parámetros adicionales.
+
+3. Ruta: http://localhost:3000/mensaje/juan
+   Resultado: Muestra "Hola juan"
+   Explicación: Esta ruta GET usa un parámetro de URL (:nombre). El servidor captura 
+   el valor "juan" de req.params.nombre y lo concatena con "Hola ", mostrando un 
+   saludo personalizado.
